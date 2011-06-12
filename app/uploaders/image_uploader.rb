@@ -1,6 +1,10 @@
 class ImageUploader < CarrierWave::Uploader::Base 
   def cache_dir
-   "#{Rails.root}/tmp/uploads"
+    if Rails.env.production?
+      "#{Rails.root}/tmp/uploads"
+    else
+      super
+    end
   end
   
   def store_dir

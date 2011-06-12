@@ -1,16 +1,9 @@
-= simple_form_for @project do |form|
-
-  -if @project.errors.any?
-    #errorExplanation
-      %h2= "#{pluralize(@project.errors.count, "error")} prohibited this #{Project.name.titleize} from being saved:"
-      %ul
-        - @project.errors.full_messages.each do |msg|
-          %li= msg  
-
-  = form.input :title, :label => 'Title'
-  = form.input :url, :label => 'Url'
-  = form.input :description, :label => 'Description'
-  = form.input :image, :label => 'Image'
-
-  .actions
-    = form.button :submit
+= semantic_form_for @project do |f|
+  = f.inputs do
+    = f.input :title
+    = f.input :url
+    = f.input :description
+    = f.input :image
+    = f.input :image_cache, :as => :hidden
+    = image_tag(@project.image_url) if @project.image?
+  = f.buttons
