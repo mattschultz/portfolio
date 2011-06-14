@@ -8,12 +8,11 @@
   %body
     .container
       .two-thirds.column
-        %h1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        %p.about I'm Matt Schultz, a <strong>Ruby Developer</strong> in Orlando, Florida. I work at <a href="http://izea.com" target="_blank">IZEA</a>, where I am the lead developer of <a href="http://socialspark.com" target="_blank">SocialSpark</a>. Check out some of my projects below or learn more about me on <a href="http://www.linkedin.com/in/mattheweschultz" target="_blank">LinkedIn</a>.
         = flash[:notice]
         = flash[:alert]
         = yield
       .one-third.column
         - if current_user
           = link_to 'Sign out', destroy_user_session_path
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            
+        %p Want to get in touch? I'm <a href="https://twitter.com/#!/mattschultz">@mattschultz</a> on Twitter, or just fill out the contact form below.

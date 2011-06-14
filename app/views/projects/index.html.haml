@@ -2,12 +2,12 @@
   - @projects.each do |project|
     %li
       %h2= link_to project.title, project.url
-      = image_tag(project.image.url) if project.image?
-      %p= project.description
+      = link_to image_tag(project.image.url), project.url, target: "_blank" if project.image?
+      %p!= project.description
       - if current_user
         %ul.actions
-          %li= link_to 'Edit Project', edit_project_path(project), :class => "button"
-          %li= link_to 'Destroy Project', project, :confirm => 'Are you sure?', :method => :delete, :class => "button"
+          %li= link_to 'Edit Project', edit_project_path(project), class: "button"
+          %li= link_to 'Destroy Project', project, confirm: 'Are you sure?', method: :delete, class: "button"
 
 - if current_user
   = link_to 'New Project', new_project_path, :class => "button"

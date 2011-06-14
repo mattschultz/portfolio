@@ -2,10 +2,60 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_tree ../../../vendor/assets/stylesheets/
  *= require_self
  *= require_tree . 
- *= require_tree ../../../vendor/assets/stylesheets/
 */
+
+h2 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5em;
+  font-family: Georgia;
+  color: #333;
+  
+  a { 
+    text-decoration: none;
+    border-bottom: 1px dotted #ccc;
+  }
+  
+  a:hover {
+    border-bottom: 1px dotted #999;
+  }
+  
+  strong {
+    font-weight: normal;
+    background-color: #F6F4E8;
+    color: #9C3122;
+  }
+}
+
+li p {
+  color: #555;
+  font-size: 15px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.one-third.column p {
+  background: #f4f4f4;
+  padding: 20px;
+  text-shadow: 0 1px 0 #fff;
+  margin-top: 5px;
+  font-size: 15px;
+  
+  .button {
+    display: block;
+    margin: 10px 0 0 0;
+    text-align: center;
+  }
+}
 
 fieldset ol { 
   list-style: none;
@@ -27,4 +77,13 @@ ul.projects {
   h2 a {
     text-decoration: none;
   }
+}
+
+img {
+  box-shadow: 0 0 5px #ccc;
+  margin-bottom: 10px;
+}
+
+img:hover {
+  box-shadow: none;
 }
